@@ -1,0 +1,21 @@
+# Quant Intelligence — P0 bootstrap repository
+#
+# This repository is DOCUMENTATION ONLY during P0.
+# No business runtime, database, or application source is present.
+# The patterns below cover operating-system and editor artifacts only.
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE artifacts
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Local temporary files
+*.tmp
+*.bak
