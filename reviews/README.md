@@ -138,3 +138,22 @@ recorded in ../P0_BASELINE_MANIFEST.md.
 
 A verdict is valid only for the tuple it was issued against. If P0 canonical content
 changes semantically after the review, the verdict lapses and a new review is required.
+
+---
+
+# 6. Candidate Revision History
+
+> Recorded so a reviewer can tell whether the artifact set changed after any verdict.
+
+| Revision | Candidate SHA | Content change | Verdict issued |
+|---|---|---|---|
+| `QI-P0-05-I01` | `39f4b2dba440470717b04fd15e8a114fb2ee939f` | Initial document-only P0 candidate | none |
+| `QI-P0-05-FIX-01` | see `../P0_BASELINE_MANIFEST.md` §1a — head of `p0/bootstrap-candidate` | Restored P1–P4 roadmap phase definitions from `../docs/p0/Quant_Intelligence_P0_Review_Candidate_v0.2.md` §9; advanced `P0-05` status | none |
+
+`QI-P0-05-FIX-01` (problem family `QI-P0-05-ROADMAP-RESTORATION`) is a **documentation fix**.
+It restores previously defined roadmap content that `QI-P0-RC-0.3` omitted. It is not a new
+Product Constitution decision, and it does not authorize P1–P4 implementation.
+Provenance: `../docs/p0/QI-P0-05-FIX-01_Roadmap_Restoration_Amendment.md`.
+
+No verdict has been issued against any candidate revision yet, so no prior PASS lapses.
+`QI-P0-R01 = FIX REQUIRED` remains a verdict on `QI-P0-RC-0.2` and is unaffected.

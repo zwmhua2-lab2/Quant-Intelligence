@@ -7,6 +7,8 @@ Phase:              P0 — Project Bootstrap
 P0 Status:          NOT ACCEPTED
 Business Implementation Authorization: NONE
 Source of truth:    docs/p0/Quant_Intelligence_P0_Review_Candidate_v0.3.md (§13, §14, §17, §18, §19)
+                    docs/p0/Quant_Intelligence_P0_Review_Candidate_v0.2.md §9   (P1–P4 phase axis)
+                    docs/p0/QI-P0-05-FIX-01_Roadmap_Restoration_Amendment.md    (restoration provenance)
 ```
 
 ---
@@ -14,38 +16,109 @@ Source of truth:    docs/p0/Quant_Intelligence_P0_Review_Candidate_v0.3.md (§13
 # Part A — Phase Axis
 
 ```text
-P0   Constitution / Governance / Bootstrap      ← CURRENT PHASE
-P1   First Observable Intelligence Loop         ← GUARDRAILS ONLY, NOT AUTHORIZED
-P2   NOT DEFINED IN AUTHORITATIVE INPUT (v0.3)
-P3   NOT DEFINED IN AUTHORITATIVE INPUT (v0.3)
-P4   NOT DEFINED IN AUTHORITATIVE INPUT (v0.3)
+P0   Constitution / Governance / Bootstrap        ← CURRENT
+P1   First Observable Intelligence Loop
+P2   Deep AI
+P3   Quality / UX
+P4   V1 System Audit
+```
+
+```text
+P0     = CURRENT
+P1–P4  = NOT IMPLEMENTATION AUTHORIZED
 ```
 
 **No phase beyond P0 is authorized for implementation.** Nothing in this document
-authorizes P1, P2, P3 or P4 implementation work.
+authorizes P1, P2, P3 or P4 implementation work, and no P1 formal task is created here.
 
-## SOURCE GAP — mandatory disclosure
-
-The authoritative input for this bootstrap, `QI-P0-RC-0.3`, defines:
-
-- the **P0** roadmap in full (§14, `P0-01 … P0-07`);
-- **P1** only as *First-Slice Guardrails* (§13), and as a referenced target of future
-  Formal Requirements (§13, §17 item 9/10, §18 item 17/18, `KSL-02`);
-- **P2**, **P3**, **P4** — **not at all**.
-
-Provenance note (factual, not adopted content): predecessor candidate `QI-P0-RC-0.2` §9
-carried a four-phase outline (`P1 First Observable Intelligence Loop`, `P2 Deep AI`,
-`P3 Quality / UX`, `P4 V1 System Audit`). `v0.3` §14 is titled *"Updated P0 Roadmap"* and
-restates only the P0 portion; `v0.3` §16 "Changed" does **not** record a removal of the
-P1–P4 outline.
-
-This bootstrap does **not** import the predecessor's P1–P4 definitions into the P0
-candidate, and does **not** invent replacement content. The P1–P4 scope therefore remains
-**UNRESOLVED and NOT AUTHORIZED** until a future Human-authorized design step defines it.
+The P1–P4 definitions below are **restored previously-defined content**, not a new design
+decision and not an extension. Restoration rationale, source and exact text:
+`docs/p0/QI-P0-05-FIX-01_Roadmap_Restoration_Amendment.md`.
 
 ---
 
-# Part B — P0 Roadmap
+# Part B — Phase Definitions
+
+> Source: `QI-P0-RC-0.2` §9 *Initial Roadmap — Review Candidate* (restored verbatim).
+> These phases are `NOT IMPLEMENTATION AUTHORIZED`.
+
+## P0｜Constitution / Governance / Bootstrap
+
+完成：
+
+- source truth；
+- derivation manifest；
+- Constitution；
+- Governance；
+- Architecture boundary；
+- GPT-6 critical review；
+- findings closure；
+- Repository bootstrap；
+- Registry；
+- Final Baseline freeze。
+
+**P0 完成前无业务 coding authorization。**
+
+## P1｜First Observable Intelligence Loop
+
+最小完整链：
+
+真实行情  
+→ 少量 Scanner Event  
+→ Evidence  
+→ deterministic Decision baseline  
+→ Report  
+→ 单通知通道  
+→ 简体中文最小 UI  
+→ History  
+→ due Outcome。
+
+P1 明确标记 `WITHOUT_AI BASELINE`。
+
+> P1 event/Detector selection is additionally constrained by Part D
+> (v0.3 First-Slice Guardrails). Those guardrails remain authoritative and are not
+> weakened by this restoration.
+
+## P2｜Deep AI
+
+加入：
+
+- 单一真实 Provider；
+- frozen prompt/schema；
+- structured output；
+- timeout/retry；
+- failure downgrade；
+- WITH_AI / WITHOUT_AI paired evaluation。
+
+## P3｜Quality / UX
+
+完善：
+
+- priority；
+- dedupe；
+- coverage；
+- miss-rate reference；
+- calibration；
+- type outcome；
+- history/report experience。
+
+## P4｜V1 System Audit
+
+真实持续观察并验证：
+
+- reliability；
+- recovery；
+- latency；
+- budget；
+- data gaps；
+- no-trading boundary；
+- product quality evidence。
+
+由 GPT-6 做 System-Level Audit。
+
+---
+
+# Part C — P0 Roadmap
 
 ## P0-01
 
@@ -65,7 +138,7 @@ Sol Findings Closure / RC v0.3 — **DONE**
 
 ## P0-05
 
-Document-only Repository Bootstrap Candidate — **CURRENT**
+Document-only Repository Bootstrap Candidate — **DONE**
 
 目标：
 
@@ -75,9 +148,16 @@ Document-only Repository Bootstrap Candidate — **CURRENT**
 - 记录 source references；
 - 形成真实 Candidate Git SHA。
 
+执行记录：
+
+```text
+P0-05-I01     Document-only Repository Bootstrap Candidate     → COMPLETED
+P0-05-FIX-01  Roadmap Restoration (P1–P4 phase axis)           → COMPLETED
+```
+
 ## P0-06
 
-GPT-6 Final P0 Re-Review — **NOT STARTED**
+GPT-6 Final P0 Re-Review — **NEXT / NOT STARTED**
 
 审查对象：
 
@@ -104,14 +184,16 @@ P0-01  DONE
 P0-02  DONE
 P0-03  DONE / FIX REQUIRED
 P0-04  DONE
-P0-05  CURRENT
-P0-06  NOT STARTED
+P0-05  DONE   (I01 + FIX-01)
+P0-06  NEXT / NOT STARTED
 P0-07  NOT STARTED
 ```
 
 ---
 
-# Part C — P1 First-Slice Guardrails
+# Part D — P1 First-Slice Guardrails
+
+> Source: `QI-P0-RC-0.3` §13. Authoritative and unchanged by the roadmap restoration.
 
 P0 不在这里冻结具体 P1 Detector 集合。
 
@@ -127,7 +209,7 @@ P0 不在这里冻结具体 P1 Detector 集合。
 
 ---
 
-# Part D — P0 Freeze Gate
+# Part E — P0 Freeze Gate
 
 P0 只有同时满足以下条件才可 ACCEPTED：
 
@@ -152,7 +234,7 @@ P0 只有同时满足以下条件才可 ACCEPTED：
 
 ---
 
-# Part E — NOT VERIFIED
+# Part F — NOT VERIFIED
 
 当前仍未验证：
 
@@ -170,5 +252,5 @@ P0 只有同时满足以下条件才可 ACCEPTED：
 12. v0.3 Independent Re-Review — NOT PERFORMED。
 13. P0 Accepted Baseline — NOT AVAILABLE。
 
-> Item 1 (repository establishment) was resolved by the separate P0-05 pre-step recorded in
+> Item 1 (repository establishment) was resolved by the `P0-05` pre-step recorded in
 > `PROJECT_STATE.md`. All other items remain open. Item 12 is now scheduled as `P0-06`.

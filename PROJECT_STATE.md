@@ -6,6 +6,7 @@ Status:             REVIEW CANDIDATE
 Phase:              P0 — Project Bootstrap
 Source of truth:    docs/p0/Quant_Intelligence_P0_Review_Candidate_v0.3.md (§1, §19)
                    + P0-05 Repository Precondition Update
+                   + docs/p0/QI-P0-05-FIX-01_Roadmap_Restoration_Amendment.md
 ```
 
 > This is a **current-state snapshot**, not a full history.
@@ -21,7 +22,8 @@ Phase:
   P0 — Project Bootstrap
 
 Current Task:
-  QI-P0-05-I01
+  QI-P0-05-FIX-01  (COMPLETED — most recently executed task)
+  QI-P0-05-I01     (COMPLETED)
 
 P0 Status:
   NOT ACCEPTED
@@ -45,7 +47,8 @@ Blocking Findings:
   DESIGN CLOSED / FINAL RE-REVIEW REQUIRED
 
 Next:
-  P0-06 GPT-6 Final P0 Re-Review after Candidate SHA exists
+  P0-06 GPT-6 Final P0 Re-Review, bound to the Final Candidate Git SHA
+  recorded in P0_BASELINE_MANIFEST.md
 ```
 
 ---
@@ -61,8 +64,10 @@ Business Implementation Authorization = NONE
   The five blocking findings are recorded as `DESIGN CLOSED / RE-REVIEW REQUIRED`.
   `DESIGN CLOSED` does **not** mean a reviewer has accepted them. They may only be called
   `REVIEW CLOSED` after an independent Final Re-Review PASS.
-- This bootstrap task (`QI-P0-05-I01`) completing successfully is **not** P0 acceptance,
-  is **not** a GPT-6 PASS, and does **not** authorize business coding.
+- The `P0-05` tasks (`QI-P0-05-I01`, `QI-P0-05-FIX-01`) completing successfully are
+  **not** P0 acceptance, are **not** a GPT-6 PASS, and do **not** authorize business coding.
+- Restoring the P1–P4 roadmap phase definitions (`QI-P0-05-FIX-01`) does **not** authorize
+  P1, P2, P3 or P4 implementation. It restores previously defined content only.
 
 ---
 
@@ -80,7 +85,7 @@ Business Implementation Authorization = NONE
 
 The repository was created by Human and verified empty before bootstrap. This resolves
 `v0.3 §17` item 1 (`Quant Intelligence Repository — NOT ESTABLISHED`) — see `ROADMAP.md`
-Part E for the remaining open items.
+Part F for the remaining open items.
 
 ---
 
@@ -121,7 +126,13 @@ Part E for the remaining open items.
 
 ---
 
-# 5. Status Snapshot (from source candidate §19)
+# 5. Status Snapshot
+
+## 5a. Historical snapshot — as recorded in source candidate §19
+
+> **HISTORICAL ONLY.** This is the state as of `QI-P0-RC-0.3` at the time it was written.
+> It is retained for provenance and must **not** be read as the current status.
+> The current, authoritative status is §5b.
 
 ```text
 P0-01  DONE
@@ -138,13 +149,20 @@ DeepSeek Business Coding = FORBIDDEN
 PROJECT REPOSITORY NOT ESTABLISHED
 ```
 
-当前状态更新（P0-05 执行中）：
+## 5b. Current status (authoritative)
 
 ```text
+P0-01  DONE
+P0-02  DONE
+P0-03  DONE / GPT-6 = FIX REQUIRED
 P0-04  DONE
-P0-05  CURRENT (QI-P0-05-I01 executing)
-P0-06  NOT STARTED
+P0-05  COMPLETED   (P0-05-I01 + P0-05-FIX-01)
+P0-06  NEXT / NOT STARTED
 P0-07  NOT STARTED
+
+P0 = NOT ACCEPTED
+Business Implementation Authorization = NONE
+DeepSeek Business Coding = FORBIDDEN
 PROJECT REPOSITORY = ESTABLISHED (zwmhua2-lab2/Quant-Intelligence)
 ```
 
