@@ -2,8 +2,8 @@
 
 ```text
 Document ID:        QI-P0-DOC-PROJECT-STATE
-Status:             REVIEW CANDIDATE
-Phase:              P0 — Project Bootstrap
+Status:             ACCEPTED
+Phase:              P0 — Accepted Baseline
 Source of truth:    docs/p0/Quant_Intelligence_P0_Review_Candidate_v0.3.md (§1, §19)
                    + P0-05 Repository Precondition Update
                    + docs/p0/QI-P0-05-FIX-01_Roadmap_Restoration_Amendment.md
@@ -19,14 +19,16 @@ Source of truth:    docs/p0/Quant_Intelligence_P0_Review_Candidate_v0.3.md (§1,
 Project:                                Quant Intelligence
 
 Phase:
-  P0 — Project Bootstrap
+  P0 — Accepted Baseline
 
 Current Task:
-  QI-P0-07-I01     (CLOSEOUT IN PROGRESS — most recently executed task)
+  QI-P0-07-I02     (DONE / ACCEPTED — Final Freeze / Registry / Accepted Baseline)
+  QI-P0-07-I01     (COMPLETED — AI-accepted P0 acceptance closeout candidate)
   QI-P0-06-R01     (COMPLETED — Final P0 Re-Review, verdict PASS)
 
 P0 Status:
-  NOT ACCEPTED
+  ACCEPTED
+  Acceptance Authority: DELEGATED_AI
 
 Business Implementation Authorization:
   NONE
@@ -44,7 +46,7 @@ QI-P0-R01:
   FIX REQUIRED  (verdict on QI-P0-RC-0.2 — not erased by later revisions)
   Finding closure: 8 / 8 CLOSED at P0 design / migration-contract level
 
-QI-P0-06-R01 reviewed:
+GPT-6 Reviewed SHA:
   f7ea873b9b61527af481646fb88f63f6a52f9a52
 
 Verdict:
@@ -53,10 +55,21 @@ Verdict:
 Blocking Findings:
   0
 
+P0-07-I01 Closeout SHA:
+  fabe3616bec75b2212b51d15ea37485377de5145
+
+Global Registry Commit:
+  08031c45dbd735ebad911e96d17a4a042788fa95
+
+Accepted Baseline Tag:
+  p0-v1.0.0
+
+Accepted Baseline SHA:
+  = commit referenced by refs/tags/p0-v1.0.0
+
 Next:
-  P0-07-I02 Mechanical P0 Freeze / Registry / Accepted Baseline
-  Precondition: this closeout candidate passes Independent Closeout Verification
-  and AI Acceptance. QI-P0-07-I01 alone does NOT constitute P0 Acceptance.
+  P1 Requirement / Architecture Design
+  NOT P1 Coding.
 ```
 
 ---
@@ -64,7 +77,7 @@ Next:
 # 2. Two boundaries that must not be misread
 
 ```text
-P0 = NOT ACCEPTED
+P0 = ACCEPTED
 Business Implementation Authorization = NONE
 ```
 
@@ -164,24 +177,28 @@ PROJECT REPOSITORY NOT ESTABLISHED
 ```text
 P0-01  DONE
 P0-02  DONE
-P0-03  DONE / FIX REQUIRED
+P0-03  DONE
 P0-04  DONE
 P0-05  DONE
 P0-06  DONE / PASS
-P0-07  CLOSEOUT IN PROGRESS
+P0-07  DONE / ACCEPTED
 
-P0 = NOT ACCEPTED
+P0 = ACCEPTED
+
 Business Implementation Authorization = NONE
 DeepSeek Business Coding = FORBIDDEN
+
+P1 = DESIGN NEXT / NOT STARTED
+P1 Implementation Authorization = NONE
 PROJECT REPOSITORY = ESTABLISHED (zwmhua2-lab2/Quant-Intelligence)
 ```
 
 下一步：
 
-**P0-07-I02｜Mechanical P0 Freeze / Registry / Accepted Baseline**
+**P1 Requirement / Architecture Design**
 
-前置条件：本 closeout candidate 先通过 Independent Closeout Verification 与 AI Acceptance。
-`QI-P0-07-I01` 本身**不**构成 P0 Acceptance，也不授权 P1-P4 实现。
+P0 已 `ACCEPTED`。`P1` 仍为 `DESIGN NEXT / NOT STARTED`，`P1–P4` 均**未**获得实现授权。
+下一步**不是** P1 Coding。
 
 ---
 

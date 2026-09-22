@@ -2,9 +2,9 @@
 
 ```text
 Document ID:        QI-P0-DOC-DERIVATION-MANIFEST
-Status:             REVIEW CANDIDATE
-Phase:              P0 — Project Bootstrap
-P0 Status:          NOT ACCEPTED
+Status:             ACCEPTED
+Phase:              P0 — Accepted Baseline
+P0 Status:          ACCEPTED
 Business Implementation Authorization: NONE
 Source of truth:    docs/p0/Quant_Intelligence_P0_Review_Candidate_v0.3.md (§5, §7, §12)
 Clause range:       M-01 … M-06, KSL-01 … KSL-03, MAP-01 … MAP-03

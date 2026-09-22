@@ -7,8 +7,8 @@ Document-only P0 bootstrap repository for the **Quant Intelligence** project.
 ## Status
 
 ```text
-Phase:                              P0 — Project Bootstrap
-P0 Status:                          NOT ACCEPTED
+Phase:                              P0 Accepted Baseline / P1 Design Next
+P0 Status:                          ACCEPTED
 Business Implementation Authorization: NONE
 Repository Content Type:            DOCUMENTATION ONLY
 Business / Runtime Code:            NONE
@@ -21,16 +21,12 @@ notification runtime and no trading capability of any kind.
 
 ---
 
-## WARNING — not a product baseline
+## P0 accepted — this is not an implementation authorization
 
-`P0` is **not** accepted. Nothing in this repository authorizes business
-implementation.
+`P0` is accepted as the project constitution / governance / architecture baseline.
 
-- The final acceptance target is a **Repository Candidate Git SHA** reviewed by an
-  independent GPT-6 Final P0 Re-Review.
-- The Candidate branch is `p0/bootstrap-candidate`.
-- `main` holds only this minimal initialisation, which exists to provide a base for
-  the Candidate branch.
+This does **not** authorize business implementation.
+`P1` must first complete Requirement / Task Design and freeze a Formal Task.
 
 ---
 
@@ -47,11 +43,14 @@ MarketPulse is **not** modified by this repository.
 
 ## Where the canonical documentation lives
 
-The P0 canonical documentation candidate is on branch:
+Canonical documents now live on `main`.
 
 ```text
-p0/bootstrap-candidate
+main         — accepted P0 baseline
+p0-v1.0.0    — accepted baseline tag
 ```
+
+The historical candidate branch `p0/bootstrap-candidate` may remain for provenance.
 
 Read, in order:
 

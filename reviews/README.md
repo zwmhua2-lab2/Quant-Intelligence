@@ -1,9 +1,9 @@
 # Quant Intelligence — REVIEWS
 
 ```text
-Status:             REVIEW CANDIDATE
-Phase:              P0 — Project Bootstrap
-P0 Status:          NOT ACCEPTED
+Status:             ACCEPTED
+Phase:              P0 — Accepted Baseline
+P0 Status:          ACCEPTED
 Business Implementation Authorization: NONE
 ```
 
@@ -221,7 +221,8 @@ changes semantically after the review, the verdict lapses and a new review is re
 |---|---|---|---|
 | `QI-P0-05-I01` | `39f4b2dba440470717b04fd15e8a114fb2ee939f` | Initial document-only P0 candidate | none |
 | `QI-P0-05-FIX-01` | see `../P0_BASELINE_MANIFEST.md` §1a — head of `p0/bootstrap-candidate` | Restored P1–P4 roadmap phase definitions from `../docs/p0/Quant_Intelligence_P0_Review_Candidate_v0.2.md` §9; advanced `P0-05` status | `f7ea873b9b61527af481646fb88f63f6a52f9a52` = `QI-P0-06-R01` `PASS` |
-| `QI-P0-07-I01` | see `../P0_BASELINE_MANIFEST.md` §1a — head of `p0/bootstrap-candidate` | Closeout candidate: persisted the `QI-P0-06-R01` review artifact, applied the `QI-P0-06-R01-P2-01` documentation-accuracy correction, updated review registry / status metadata / baseline pointers | none (pending Independent Closeout Verification) |
+| `QI-P0-07-I01` | `fabe3616bec75b2212b51d15ea37485377de5145` | Closeout candidate: persisted the `QI-P0-06-R01` review artifact, applied the `QI-P0-06-R01-P2-01` documentation-accuracy correction, updated review registry / status metadata / baseline pointers | Independent Closeout Verification `PASS`; AI Acceptance `ACCEPTED` |
+| `QI-P0-07-I02` | = commit referenced by `p0-v1.0.0` | Final freeze: status metadata advanced to `ACCEPTED`, acceptance provenance and baseline pointers recorded, Global Project Registry registered | none — terminal accepted baseline |
 
 `QI-P0-05-FIX-01` (problem family `QI-P0-05-ROADMAP-RESTORATION`) is a **documentation fix**.
 It restores previously defined roadmap content that `QI-P0-RC-0.3` omitted. It is not a new
@@ -235,3 +236,55 @@ The `QI-P0-07-I01` closeout candidate changes only review provenance, status met
 documentation accuracy and hash pointers — see
 `../docs/p0/QI-P0-07-I01_Closeout_Diff_Classification.md` for the exact diff and applicability
 judgement required by `AUTONOMOUS_DEVELOPMENT_GOVERNANCE.md` FZ-04.
+
+---
+
+# 7. Final P0 Acceptance Provenance
+
+> Added by `QI-P0-07-I02` (Final Freeze / Registry / Accepted Baseline).
+> The historical records in §1–§6 above are preserved and are **not** rewritten.
+
+```text
+QI-P0-06-R01 = PASS
+QI-P0-07-I01 = ACCEPTED
+P0-07-I02    = FINAL FREEZE
+
+P0 Acceptance Authority:
+  DELEGATED_AI
+
+Global Registry:
+  HUMAN-CONFIRMED
+
+Accepted Baseline Tag:
+  p0-v1.0.0
+```
+
+```text
+GPT-6 Reviewed SHA:
+  f7ea873b9b61527af481646fb88f63f6a52f9a52
+
+AI-accepted Closeout Candidate SHA:
+  fabe3616bec75b2212b51d15ea37485377de5145
+
+Global Registry Commit:
+  08031c45dbd735ebad911e96d17a4a042788fa95
+
+Accepted Baseline SHA:
+  = commit referenced by refs/tags/p0-v1.0.0
+
+Business Implementation Authorization:
+  NONE
+
+P1 implementation:
+  NOT AUTHORIZED
+```
+
+Human confirmation applies **specifically to the Global Project Registry registration**. P0
+acceptance itself was issued by the delegated AI Acceptance Authority after independent
+verification of `QI-P0-07-I01`. No Human P0 acceptance is claimed or implied.
+
+The historical `QI-P0-R01 = FIX REQUIRED` record in §1, §2 and §3 above is **not** erased.
+
+Full freeze provenance and changed-path classification:
+`../docs/p0/QI-P0-07-I02_Final_Freeze_Record.md` and
+`../docs/p0/QI-P0-07-I02_Final_Freeze_Diff_Classification.md`.

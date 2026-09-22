@@ -2,9 +2,9 @@
 
 ```text
 Document ID:        QI-P0-DOC-ROADMAP
-Status:             REVIEW CANDIDATE
-Phase:              P0 — Project Bootstrap
-P0 Status:          NOT ACCEPTED
+Status:             ACCEPTED
+Phase:              P0 — Accepted Baseline
+P0 Status:          ACCEPTED
 Business Implementation Authorization: NONE
 Source of truth:    docs/p0/Quant_Intelligence_P0_Review_Candidate_v0.3.md (§13, §14, §17, §18, §19)
                     docs/p0/Quant_Intelligence_P0_Review_Candidate_v0.2.md §9   (P1–P4 phase axis)
@@ -16,7 +16,7 @@ Source of truth:    docs/p0/Quant_Intelligence_P0_Review_Candidate_v0.3.md (§13
 # Part A — Phase Axis
 
 ```text
-P0   Constitution / Governance / Bootstrap        ← CURRENT
+P0   Constitution / Governance / Bootstrap        ← DONE / ACCEPTED
 P1   First Observable Intelligence Loop
 P2   Deep AI
 P3   Quality / UX
@@ -24,7 +24,9 @@ P4   V1 System Audit
 ```
 
 ```text
-P0     = CURRENT
+P0     = ACCEPTED
+P0-07  = DONE / ACCEPTED
+P1     = DESIGN NEXT / NOT STARTED
 P1–P4  = NOT IMPLEMENTATION AUTHORIZED
 ```
 
@@ -179,7 +181,7 @@ Full artifact:          reviews/QI-P0-06-R01_Final_P0_ReReview_Result.md
 
 ## P0-07
 
-P0 Final Freeze / Registry / Accepted Baseline — **CLOSEOUT IN PROGRESS**
+P0 Final Freeze / Registry / Accepted Baseline — **DONE / ACCEPTED**
 
 只有完成 exact reviewed Candidate、required closeout、Registry、baseline pointers，才能：
 
@@ -196,7 +198,9 @@ P0-03  DONE / FIX REQUIRED
 P0-04  DONE
 P0-05  DONE
 P0-06  DONE / PASS
-P0-07  CLOSEOUT IN PROGRESS
+P0-07  DONE / ACCEPTED
+
+P0 = ACCEPTED
 ```
 
 ---
@@ -262,8 +266,9 @@ P0 只有同时满足以下条件才可 ACCEPTED：
 12. v0.3 Independent Re-Review — PERFORMED as `P0-06` on the repository candidate
     (`f7ea873b…`, verdict `PASS`); outside-repo archive byte-level SHA-256
     recomputation still NOT PERFORMED。
-13. P0 Accepted Baseline — NOT AVAILABLE。
+13. P0 Accepted Baseline — AVAILABLE（`refs/tags/p0-v1.0.0`）。
 
 > Item 1 (repository establishment) was resolved by the `P0-05` pre-step recorded in
 > `PROJECT_STATE.md`. Item 12 is now `P0-06` and has PASSed on the repository candidate.
+> Item 13 was resolved by `P0-07-I02` (accepted baseline tag `p0-v1.0.0`).
 > All other items remain open.

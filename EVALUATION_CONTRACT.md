@@ -2,9 +2,9 @@
 
 ```text
 Document ID:        QI-P0-DOC-EVALUATION-CONTRACT
-Status:             REVIEW CANDIDATE
-Phase:              P0 — Project Bootstrap
-P0 Status:          NOT ACCEPTED
+Status:             ACCEPTED
+Phase:              P0 — Accepted Baseline
+P0 Status:          ACCEPTED
 Business Implementation Authorization: NONE
 Source of truth:    docs/p0/Quant_Intelligence_P0_Review_Candidate_v0.3.md (§6, §9)
 Clause range:       S-01 … S-04, E-01 … E-10

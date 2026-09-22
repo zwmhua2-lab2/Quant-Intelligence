@@ -2,9 +2,9 @@
 
 ```text
 Document ID:        QI-P0-DOC-AI-BOOTSTRAP
-Status:             REVIEW CANDIDATE
-Phase:              P0 — Project Bootstrap
-P0 Status:          NOT ACCEPTED
+Status:             ACCEPTED
+Phase:              P0 — Accepted Baseline
+P0 Status:          ACCEPTED
 Business Implementation Authorization: NONE
 ```
 
