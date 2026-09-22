@@ -120,7 +120,7 @@ P1 明确标记 `WITHOUT_AI BASELINE`。
 This restores a **phase axis**. It does **not** revert any `QI-P0-RC-0.3` decision.
 
 The `v0.3` P1 First-Slice Guardrails remain fully authoritative and are preserved without
-weakening in `ROADMAP.md` Part C:
+weakening in `ROADMAP.md` Part D:
 
 ```text
 FAILED_BREAKOUT 不可直接迁移
@@ -197,6 +197,7 @@ PROJECT_STATE.md                                      (task status advanced)
 P0_BASELINE_MANIFEST.md                               (new candidate SHA + refreshed blob SHAs)
 reviews/README.md                                     (fix provenance note)
 docs/p0/QI-P0-05-FIX-01_Roadmap_Restoration_Amendment.md   (this record)
+docs/p0/Quant_Intelligence_P0_Review_Candidate_v0.2.md      (restoration source artifact, added)
 ```
 
 Untouched, as required:

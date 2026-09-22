@@ -18,6 +18,7 @@ Business Implementation Authorization: NONE
 | Review Task ID | Reviewer | Reviewed Artifact | Verdict | Full Artifact In Repo |
 |---|---|---|---|---|
 | `QI-P0-R01` | GPT-6 Astra Pro (independent session) | `QI-P0-RC-0.2` | `FIX REQUIRED` | **YES** |
+| `QI-P0-06-R01` | GPT-6 Astra Pro | Repository candidate `f7ea873b9b61527af481646fb88f63f6a52f9a52` | `PASS` | **YES** |
 
 ---
 
@@ -81,6 +82,77 @@ Source repository (pinned):   zwmhua2-lab2/MarketPulse-AI @ 7a023f99ac44ac744e5a
 `DESIGN CLOSED` 不代表 Reviewer 已接受。
 
 五个 Blocking Findings 只有在独立 Final Re-Review PASS 后才能称为 `REVIEW CLOSED`。
+
+---
+
+# 3a. QI-P0-06-R01 — Final P0 Re-Review and Finding Closure
+
+> Added by `QI-P0-07-I01`. §3 above remains the faithful transcription of `QI-P0-RC-0.3` §15
+> and is intentionally **not** rewritten; this section records the later closure outcome.
+
+```text
+Review Task ID:        QI-P0-06-R01
+Reviewer:              GPT-6 Astra Pro
+Reviewed Candidate SHA:
+  f7ea873b9b61527af481646fb88f63f6a52f9a52
+Reviewed Candidate Tree SHA:
+  9ccc44986d5ca5b68ad13cadcaaca971480e5b60
+Mode:                  READ_ONLY
+Verdict:               PASS
+Blocking Findings:     0
+Full artifact:         PRESENT
+Blocking Findings (P0):
+  NONE
+```
+
+## Full artifact identity
+
+```text
+Path:      reviews/QI-P0-06-R01_Final_P0_ReReview_Result.md
+SHA-256:   9d5ac3ff473254138f33b08174199b142c9ea939fd0759a2d8ba43ebec6c7e48
+Blob SHA:  83689528a73bef3a8130b0b92a4e47d0f8e1026e
+Bytes:     24362
+```
+
+Stored byte-for-byte as supplied (`cmp` verified). Not reformatted, not regenerated.
+
+## Prior finding closure (as recorded by the review artifact)
+
+| Prior Finding | Status |
+|---|---|
+| `P1-01` Feature producer / source algorithm risks | `CLOSED` |
+| `P1-02` Cross-module causal time | `CLOSED` |
+| `P1-03` Evaluation cohort / version binding | `CLOSED` |
+| `P1-04` Autonomous fix / RCA fuse | `CLOSED` |
+| `P1-05` Review-to-freeze identity | `CLOSED` |
+| `P2-01` Score semantics | `CLOSED` |
+| `P2-02` Canonical safety | `CLOSED` |
+| `P2-03` Runtime health | `CLOSED` |
+
+`CLOSED` here means: the independent re-review confirmed the P0 design disposition and the
+future migration acceptance constraints. It does **not** mean business implementation exists,
+tests ran, source code was fixed, or any P1–P4 phase is authorized.
+
+## New non-blocking finding introduced by this review
+
+```text
+Finding ID:  QI-P0-06-R01-P2-01
+Severity:    P2 / NON-BLOCKING P0 FREEZE
+Nature:      documentation-accuracy issue in
+             docs/p0/QI-P0-05-FIX-01_Roadmap_Restoration_Amendment.md
+             (a) §4 navigation pointed First-Slice Guardrails at ROADMAP.md Part C
+                 (Part C is the P0 Roadmap; the guardrails are in Part D)
+             (b) §7 touched-files list omitted the added restoration source artifact
+                 docs/p0/Quant_Intelligence_P0_Review_Candidate_v0.2.md
+Correction:  applied by QI-P0-07-I01
+Status:      CORRECTED / NON-SEMANTIC / CLOSEOUT VERIFICATION REQUIRED
+Human decision required: NO
+```
+
+Correction diff and classification:
+`../docs/p0/QI-P0-07-I01_Closeout_Diff_Classification.md`.
+
+No other finding is recorded by `QI-P0-06-R01`.
 
 ---
 
@@ -148,12 +220,18 @@ changes semantically after the review, the verdict lapses and a new review is re
 | Revision | Candidate SHA | Content change | Verdict issued |
 |---|---|---|---|
 | `QI-P0-05-I01` | `39f4b2dba440470717b04fd15e8a114fb2ee939f` | Initial document-only P0 candidate | none |
-| `QI-P0-05-FIX-01` | see `../P0_BASELINE_MANIFEST.md` §1a — head of `p0/bootstrap-candidate` | Restored P1–P4 roadmap phase definitions from `../docs/p0/Quant_Intelligence_P0_Review_Candidate_v0.2.md` §9; advanced `P0-05` status | none |
+| `QI-P0-05-FIX-01` | see `../P0_BASELINE_MANIFEST.md` §1a — head of `p0/bootstrap-candidate` | Restored P1–P4 roadmap phase definitions from `../docs/p0/Quant_Intelligence_P0_Review_Candidate_v0.2.md` §9; advanced `P0-05` status | `f7ea873b9b61527af481646fb88f63f6a52f9a52` = `QI-P0-06-R01` `PASS` |
+| `QI-P0-07-I01` | see `../P0_BASELINE_MANIFEST.md` §1a — head of `p0/bootstrap-candidate` | Closeout candidate: persisted the `QI-P0-06-R01` review artifact, applied the `QI-P0-06-R01-P2-01` documentation-accuracy correction, updated review registry / status metadata / baseline pointers | none (pending Independent Closeout Verification) |
 
 `QI-P0-05-FIX-01` (problem family `QI-P0-05-ROADMAP-RESTORATION`) is a **documentation fix**.
 It restores previously defined roadmap content that `QI-P0-RC-0.3` omitted. It is not a new
 Product Constitution decision, and it does not authorize P1–P4 implementation.
 Provenance: `../docs/p0/QI-P0-05-FIX-01_Roadmap_Restoration_Amendment.md`.
 
-No verdict has been issued against any candidate revision yet, so no prior PASS lapses.
+A verdict is valid only for the tuple it was issued against. **`QI-P0-06-R01` issued `PASS`
+against revision `QI-P0-05-FIX-01` (`f7ea873b…`)**; that verdict binds only that exact SHA.
 `QI-P0-R01 = FIX REQUIRED` remains a verdict on `QI-P0-RC-0.2` and is unaffected.
+The `QI-P0-07-I01` closeout candidate changes only review provenance, status metadata,
+documentation accuracy and hash pointers — see
+`../docs/p0/QI-P0-07-I01_Closeout_Diff_Classification.md` for the exact diff and applicability
+judgement required by `AUTONOMOUS_DEVELOPMENT_GOVERNANCE.md` FZ-04.

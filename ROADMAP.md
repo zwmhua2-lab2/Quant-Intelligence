@@ -157,7 +157,7 @@ P0-05-FIX-01  Roadmap Restoration (P1–P4 phase axis)           → COMPLETED
 
 ## P0-06
 
-GPT-6 Final P0 Re-Review — **NEXT / NOT STARTED**
+GPT-6 Final P0 Re-Review — **DONE / PASS**
 
 审查对象：
 
@@ -167,9 +167,19 @@ GPT-6 Final P0 Re-Review — **NEXT / NOT STARTED**
 
 若 PASS，进入 P0-07；若 FIX REQUIRED，返回 Sol Findings Closure。
 
+审查结果（status metadata）：
+
+```text
+Review Task:            QI-P0-06-R01
+Reviewed Candidate SHA: f7ea873b9b61527af481646fb88f63f6a52f9a52
+Verdict:                PASS
+Blocking Findings:      0
+Full artifact:          reviews/QI-P0-06-R01_Final_P0_ReReview_Result.md
+```
+
 ## P0-07
 
-P0 Final Freeze / Registry / Accepted Baseline — **NOT STARTED**
+P0 Final Freeze / Registry / Accepted Baseline — **CLOSEOUT IN PROGRESS**
 
 只有完成 exact reviewed Candidate、required closeout、Registry、baseline pointers，才能：
 
@@ -184,9 +194,9 @@ P0-01  DONE
 P0-02  DONE
 P0-03  DONE / FIX REQUIRED
 P0-04  DONE
-P0-05  DONE   (I01 + FIX-01)
-P0-06  NEXT / NOT STARTED
-P0-07  NOT STARTED
+P0-05  DONE
+P0-06  DONE / PASS
+P0-07  CLOSEOUT IN PROGRESS
 ```
 
 ---
@@ -249,8 +259,11 @@ P0 只有同时满足以下条件才可 ACCEPTED：
 9. P1 detector set — NOT FROZEN。
 10. P1 universe / horizons / thresholds — NOT FROZEN。
 11. Product KPI thresholds — NOT FROZEN。
-12. v0.3 Independent Re-Review — NOT PERFORMED。
+12. v0.3 Independent Re-Review — PERFORMED as `P0-06` on the repository candidate
+    (`f7ea873b…`, verdict `PASS`); outside-repo archive byte-level SHA-256
+    recomputation still NOT PERFORMED。
 13. P0 Accepted Baseline — NOT AVAILABLE。
 
 > Item 1 (repository establishment) was resolved by the `P0-05` pre-step recorded in
-> `PROJECT_STATE.md`. All other items remain open. Item 12 is now scheduled as `P0-06`.
+> `PROJECT_STATE.md`. Item 12 is now `P0-06` and has PASSed on the repository candidate.
+> All other items remain open.

@@ -22,8 +22,8 @@ Phase:
   P0 — Project Bootstrap
 
 Current Task:
-  QI-P0-05-FIX-01  (COMPLETED — most recently executed task)
-  QI-P0-05-I01     (COMPLETED)
+  QI-P0-07-I01     (CLOSEOUT IN PROGRESS — most recently executed task)
+  QI-P0-06-R01     (COMPLETED — Final P0 Re-Review, verdict PASS)
 
 P0 Status:
   NOT ACCEPTED
@@ -41,14 +41,22 @@ P0 Source Candidate SHA-256:
   3c24a09e92eca77bf4c6dbfd1dc473fd5955e6be6c5c547ba63f130cbbe71d86
 
 QI-P0-R01:
-  FIX REQUIRED
+  FIX REQUIRED  (verdict on QI-P0-RC-0.2 — not erased by later revisions)
+  Finding closure: 8 / 8 CLOSED at P0 design / migration-contract level
+
+QI-P0-06-R01 reviewed:
+  f7ea873b9b61527af481646fb88f63f6a52f9a52
+
+Verdict:
+  PASS
 
 Blocking Findings:
-  DESIGN CLOSED / FINAL RE-REVIEW REQUIRED
+  0
 
 Next:
-  P0-06 GPT-6 Final P0 Re-Review, bound to the Final Candidate Git SHA
-  recorded in P0_BASELINE_MANIFEST.md
+  P0-07-I02 Mechanical P0 Freeze / Registry / Accepted Baseline
+  Precondition: this closeout candidate passes Independent Closeout Verification
+  and AI Acceptance. QI-P0-07-I01 alone does NOT constitute P0 Acceptance.
 ```
 
 ---
@@ -61,9 +69,11 @@ Business Implementation Authorization = NONE
 ```
 
 - `QI-P0-R01 = FIX REQUIRED` is **not** superseded by this bootstrap.
-  The five blocking findings are recorded as `DESIGN CLOSED / RE-REVIEW REQUIRED`.
-  `DESIGN CLOSED` does **not** mean a reviewer has accepted them. They may only be called
-  `REVIEW CLOSED` after an independent Final Re-Review PASS.
+  The five blocking findings were held at `DESIGN CLOSED / FINAL RE-REVIEW REQUIRED` until the
+  independent Final Re-Review `QI-P0-06-R01` — bound to the exact candidate SHA
+  `f7ea873b9b61527af481646fb88f63f6a52f9a52` and returned `PASS` — closed them.
+  `DESIGN CLOSED` alone never meant a reviewer had accepted them; `REVIEW CLOSED` was reachable
+  only through that independent Final Re-Review PASS.
 - The `P0-05` tasks (`QI-P0-05-I01`, `QI-P0-05-FIX-01`) completing successfully are
   **not** P0 acceptance, are **not** a GPT-6 PASS, and do **not** authorize business coding.
 - Restoring the P1–P4 roadmap phase definitions (`QI-P0-05-FIX-01`) does **not** authorize
@@ -154,11 +164,11 @@ PROJECT REPOSITORY NOT ESTABLISHED
 ```text
 P0-01  DONE
 P0-02  DONE
-P0-03  DONE / GPT-6 = FIX REQUIRED
+P0-03  DONE / FIX REQUIRED
 P0-04  DONE
-P0-05  COMPLETED   (P0-05-I01 + P0-05-FIX-01)
-P0-06  NEXT / NOT STARTED
-P0-07  NOT STARTED
+P0-05  DONE
+P0-06  DONE / PASS
+P0-07  CLOSEOUT IN PROGRESS
 
 P0 = NOT ACCEPTED
 Business Implementation Authorization = NONE
@@ -168,10 +178,10 @@ PROJECT REPOSITORY = ESTABLISHED (zwmhua2-lab2/Quant-Intelligence)
 
 下一步：
 
-**P0-06｜GPT-6 Final P0 Re-Review**
+**P0-07-I02｜Mechanical P0 Freeze / Registry / Accepted Baseline**
 
-审查对象必须是 **真实 Repository Candidate Git SHA**，记录于
-`P0_BASELINE_MANIFEST.md`。
+前置条件：本 closeout candidate 先通过 Independent Closeout Verification 与 AI Acceptance。
+`QI-P0-07-I01` 本身**不**构成 P0 Acceptance，也不授权 P1-P4 实现。
 
 ---
 

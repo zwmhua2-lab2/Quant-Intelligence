@@ -32,10 +32,10 @@ Bootstrap Content Commit SHA:
 Previous Candidate SHA (QI-P0-05-I01 — superseded, see §1a):
   39f4b2dba440470717b04fd15e8a114fb2ee939f
 
-Manifest Finalization Commit SHA:
-  = tip commit of branch p0/bootstrap-candidate (see §1a)
+Reviewed Final Candidate Git SHA (QI-P0-06-R01 review target — immutable):
+  f7ea873b9b61527af481646fb88f63f6a52f9a52
 
-Final Candidate Git SHA:
+P0-07 Closeout Candidate SHA:
   = tip commit of branch p0/bootstrap-candidate (see §1a)
 ```
 
@@ -43,10 +43,8 @@ Final Candidate Git SHA:
 
 A Git object cannot contain its own hash. Therefore:
 
-- `Manifest Finalization Commit SHA` and `Final Candidate Git SHA` are the **same commit** —
-  the tip of `p0/bootstrap-candidate`, i.e. the commit that introduces this manifest text.
-- It is the **last commit** on the candidate branch, exactly as required: the review target
-  is the last commit's exact Git SHA.
+- `P0-07 Closeout Candidate SHA` is the **tip of `p0/bootstrap-candidate`**, i.e. the commit
+  that introduces this manifest text. It cannot be written literally inside this file.
 - Resolution procedure (deterministic, no chat context needed):
 
 ```bash
@@ -54,18 +52,22 @@ git ls-remote https://github.com/zwmhua2-lab2/Quant-Intelligence.git refs/heads/
 ```
 
 - The literal value obtained from that command at hand-off is published in the
-  `QI-P0-05-FIX-01` completion report. It is **not** duplicated into this file, for the
+  `QI-P0-07-I01` completion report. It is **not** duplicated into this file, for the
   reason above.
+- The **reviewed** candidate is a past, immutable commit and is therefore recorded literally:
+  `f7ea873b9b61527af481646fb88f63f6a52f9a52`. The `QI-P0-06-R01` `PASS` binds that SHA and
+  nothing later.
 - **`39f4b2dba440470717b04fd15e8a114fb2ee939f` must no longer be used as the `P0-06` review
   target.** P0 canonical content changed semantically in `QI-P0-05-FIX-01` (P1–P4 roadmap
   restoration), so the previous candidate is superseded.
-- The commit history of this branch is exactly four commits:
+- The commit history of this branch is exactly five commits:
 
 ```text
 <Base SHA>                 main initialisation  (3b37624…)
   └─ <Bootstrap Commit>    bootstrap Quant Intelligence P0 review candidate  (9c095bd…)
        └─ <Prev Candidate> finalize P0 candidate manifest  (39f4b2d… — SUPERSEDED)
-            └─ <Final Candidate> fix: restore P1–P4 roadmap baseline  ← REVIEW TARGET
+            └─ <Reviewed Candidate> fix: restore P1–P4 roadmap baseline  (f7ea873… — REVIEWED, PASS)
+                 └─ <Closeout Candidate> prepare P0 acceptance closeout candidate  ← CURRENT TIP
 ```
 
 ---
@@ -120,9 +122,9 @@ Canonical P0 documents (the review target set):
 | 4 | `ARCHITECTURE.md` | `2ad1cbf4b044c48dfb48ecc7acd6755b3c6115f4` |
 | 5 | `DERIVATION_MANIFEST.md` | `c8a3dbdd8eada38d9e8d0f7cb4d5c0949e81531f` |
 | 6 | `EVALUATION_CONTRACT.md` | `f19aec35a0039367c01956c60100ba32e80b15e2` |
-| 7 | `ROADMAP.md` | `3b3517f7b38e723040db94718d1777047df50e1f` |
-| 8 | `PROJECT_STATE.md` | `cb4c9f2abdebb5a63160c59805e3b6d49259b96b` |
-| 9 | `P0_BASELINE_MANIFEST.md` | *(self — see §1a; obtain via `git ls-tree -r <Final Candidate Git SHA>`)* |
+| 7 | `ROADMAP.md` | `6e25e4c8bcc70d07885b6960bccd8a4784b7049f` |
+| 8 | `PROJECT_STATE.md` | `6630b8e7683a3c4b4b500adfe6b28f0b8a4dffbb` |
+| 9 | `P0_BASELINE_MANIFEST.md` | *(self — see §1a; obtain via `git ls-tree -r <Closeout Candidate SHA>`)* |
 
 Preserved source artifacts and review records:
 
@@ -130,9 +132,21 @@ Preserved source artifacts and review records:
 |---|---|---|
 | 10 | `docs/p0/Quant_Intelligence_P0_Review_Candidate_v0.3.md` | `4557aea05a9b2f6b0e296417a445bcc5103bdede` |
 | 11 | `docs/p0/Quant_Intelligence_P0_Review_Candidate_v0.2.md` | `7224569c8a8b65570a2d6146f27ad16c4be50fad` |
-| 12 | `docs/p0/QI-P0-05-FIX-01_Roadmap_Restoration_Amendment.md` | `5c34f42da732b82e588dcd2bc3051220b6026736` |
-| 13 | `reviews/README.md` | `d0c29e045cbcd2571b6e9401d37912e0b33d45fa` |
+| 12 | `docs/p0/QI-P0-05-FIX-01_Roadmap_Restoration_Amendment.md` | `6ff13f3398e12e76f922270a6f839dcc98c1e6a3` |
+| 13 | `reviews/README.md` | `d8740216ad4e8334b15e972f47aad84d53899da4` |
 | 14 | `reviews/QI-P0-R01_Independent_Critical_Review_Result.md` | `3a234f47b4d6701a0b39ec2bf0031a4ea0eb6a29` |
+
+Closeout artifacts added by `QI-P0-07-I01`:
+
+| # | Path | Blob SHA |
+|---|---|---|
+| 15 | `reviews/QI-P0-06-R01_Final_P0_ReReview_Result.md` | `83689528a73bef3a8130b0b92a4e47d0f8e1026e` |
+| 16 | `docs/p0/QI-P0-07-I01_Closeout_Diff_Classification.md` | *(new in this closeout — obtain via `git ls-tree -r <Closeout Candidate SHA>`)* |
+
+Rows 7, 8, 12 and 13 were refreshed by `QI-P0-07-I01` (status metadata, documentation
+accuracy, review provenance). The five semantic invariants — rows 2, 3, 4, 5 and 6 — are
+**unchanged** from the reviewed candidate `f7ea873b…`; the `QI-P0-06-R01` `PASS` therefore
+remains valid for them. See `docs/p0/QI-P0-07-I01_Closeout_Diff_Classification.md`.
 
 Bootstrap support files (not canonical P0 content):
 
@@ -147,7 +161,7 @@ Bootstrap support files (not canonical P0 content):
 
 ```text
 QI-P0-R01:
-  FIX REQUIRED
+  FIX REQUIRED  (verdict on QI-P0-RC-0.2 — not erased by later revisions)
   Reviewer:              GPT-6 Astra Pro (independent session)
   Reviewed artifact:     QI-P0-RC-0.2
   Reviewed artifact SHA-256:
@@ -155,10 +169,25 @@ QI-P0-R01:
   Blocking findings:     5  (P1-01 … P1-05)
   Non-blocking findings: 3  (P2-01 … P2-03)
   Full artifact:         PRESENT — reviews/QI-P0-R01_Independent_Critical_Review_Result.md
-  Closure status:        DESIGN CLOSED / FINAL RE-REVIEW REQUIRED
+  Closure status:        REVIEW CLOSED (by QI-P0-06-R01 PASS — see below)
+
+GPT-6 Final Review — QI-P0-06-R01:
+  Reviewer:              GPT-6 Astra Pro
+  Reviewed Candidate SHA:
+    f7ea873b9b61527af481646fb88f63f6a52f9a52
+  Blocking Findings:     0
+  Verdict:               PASS
+  Non-blocking findings: 1  (QI-P0-06-R01-P2-01 — corrected by QI-P0-07-I01)
+  Full artifact:         PRESENT — reviews/QI-P0-06-R01_Final_P0_ReReview_Result.md
+  Full artifact SHA-256:
+    9d5ac3ff473254138f33b08174199b142c9ea939fd0759a2d8ba43ebec6c7e48
+  Full artifact Git blob SHA:
+    83689528a73bef3a8130b0b92a4e47d0f8e1026e
+  Full artifact bytes:   24362
+  Prior finding closure: 8 / 8 CLOSED  (P1-01 … P1-05, P2-01 … P2-03)
 
 Blocking Findings:
-  DESIGN CLOSED / FINAL RE-REVIEW REQUIRED
+  NONE (QI-P0-06-R01)
 
 Business Implementation Authorization:
   NONE
@@ -170,11 +199,14 @@ P1 / P2 / P3 / P4 Status:
   NOT IMPLEMENTATION AUTHORIZED
 
 Next Review:
-  P0-06 GPT-6 Final P0 Re-Review, bound to Final Candidate Git SHA
+  none scheduled before P0-07-I02. The QI-P0-07-I01 closeout candidate still requires
+  Independent Closeout Verification and AI Acceptance — that is not a fresh GPT-6
+  design review, and it does not itself accept P0.
 ```
 
-> No verdict has been issued against any candidate revision. `QI-P0-R01` is a verdict on
-> `QI-P0-RC-0.2` and is unaffected by this fix.
+> `QI-P0-R01` is a verdict on `QI-P0-RC-0.2` and is unaffected by later revisions.
+> `QI-P0-06-R01` is a verdict on `f7ea873b…` only; it is **not** a verdict on the
+> `P0-07` closeout candidate.
 
 ---
 
@@ -210,6 +242,7 @@ Full statements in `DERIVATION_MANIFEST.md` (KSL-01, KSL-02, M-06).
 ```text
 Created by:   QI-P0-05-I01 Document-only Repository Bootstrap Candidate
 Amended by:   QI-P0-05-FIX-01 Roadmap Restoration (problem family QI-P0-05-ROADMAP-RESTORATION)
+Amended by:   QI-P0-07-I01 P0 Acceptance Closeout Candidate
 Date:         2026-09-23
 Scope:        split / organize / persist / verify / commit only
 Business code created: NO
