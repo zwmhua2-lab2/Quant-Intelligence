@@ -47,7 +47,7 @@ Canonical documents now live on `main`.
 
 ```text
 main         — accepted P0 baseline
-p0-v1.0.0    — accepted baseline tag
+p0-v1.0.1    — authoritative accepted baseline tag
 ```
 
 The historical candidate branch `p0/bootstrap-candidate` may remain for provenance.

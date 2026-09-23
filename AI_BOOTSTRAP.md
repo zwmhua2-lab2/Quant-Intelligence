@@ -51,18 +51,29 @@ reported rather than silently resolved.
 # 3. Two boundaries that must not be misread
 
 ```text
-P0 NOT ACCEPTED
+P0 = ACCEPTED
 Business Implementation Authorization = NONE
+
+P1 = DESIGN NEXT / NOT STARTED
+P1 Implementation Authorization = NONE
 ```
 
 Concretely, at this state:
 
-- `P0` is a **review candidate**, not an accepted baseline.
-- The final acceptance target is a **Repository Candidate Git SHA** that has passed an
-  independent **GPT-6 Final P0 Re-Review**.
-- Business coding is **NOT authorized**. There is no authorized backlog to execute.
-- `QI-P0-R01` returned `FIX REQUIRED`. Its five blocking findings are recorded as
-  `DESIGN CLOSED / RE-REVIEW REQUIRED`, not as reviewed-closed.
+- The **P0 Constitution / Governance / Architecture baseline is accepted**. It is a
+  document-only baseline: no business implementation, no runtime, no database, no trading
+  capability.
+- Acceptance authority was **`DELEGATED_AI`** — not Human. Human confirmation applied only to
+  the Global Project Registry registration of this project.
+- `QI-P0-06-R01` independently returned `PASS`, bound to the exact candidate SHA
+  `f7ea873b9b61527af481646fb88f63f6a52f9a52`.
+- The historical `QI-P0-R01 = FIX REQUIRED` remains provenance and is **not** erased. Its
+  `P1-01 … P1-05` blocking findings and `P2-01 … P2-03` non-blocking findings were later
+  independently closed by `QI-P0-06-R01`.
+- P0 acceptance does **NOT** authorize business coding. There is no authorized backlog to
+  execute.
+- `P1` requires Requirement / Architecture / Formal Task Freeze **before** implementation.
+  `P1–P4` are **not** implementation authorized.
 
 ---
 
@@ -116,14 +127,21 @@ changes go to Human.
 
 ---
 
-# 6. If you intend to review this candidate
+# 6. If you intend to review or change the accepted baseline
 
-An independent review must bind the **exact Candidate Git SHA** recorded in
-`P0_BASELINE_MANIFEST.md`. A PASS is valid only for that tuple. Any semantic change to
-P0 canonical content after the review invalidates the previous PASS.
+The accepted baseline is resolved by the **Accepted Baseline tag** recorded in
+`P0_BASELINE_MANIFEST.md`. Read the canonical files from the repository at that commit — not
+from a chat summary, not from a worker report.
 
-Read the canonical files from the repository at that SHA — not from a chat summary, not
-from a worker report.
+If reviewing or changing the accepted baseline:
+
+1. resolve the exact **Accepted Baseline tag** to its commit, and read the canonical files
+   from the repository at that commit;
+2. inspect **Repository Truth** before relying on any earlier statement about project state;
+3. a **semantic** change to P0 canonical content requires the normal Design / Review process —
+   it is not a metadata edit;
+4. an old `PASS` cannot silently cover a later semantic change. A verdict is valid only for
+   the exact tuple it was issued against.
 
 ---
 

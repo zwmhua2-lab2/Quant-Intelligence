@@ -22,7 +22,9 @@ Phase:
   P0 — Accepted Baseline
 
 Current Task:
-  QI-P0-07-I02     (DONE / ACCEPTED — Final Freeze / Registry / Accepted Baseline)
+  QI-P0-07-I02-FIX-01 (DONE — Final Freeze Consistency + Local Scope Cleanup)
+  QI-P0-07-I02     (COMPLETED — Final Freeze / Registry / Accepted Baseline;
+                    its p0-v1.0.0 freeze tag was superseded by I02-FIX-01)
   QI-P0-07-I01     (COMPLETED — AI-accepted P0 acceptance closeout candidate)
   QI-P0-06-R01     (COMPLETED — Final P0 Re-Review, verdict PASS)
 
@@ -61,11 +63,20 @@ P0-07-I01 Closeout SHA:
 Global Registry Commit:
   08031c45dbd735ebad911e96d17a4a042788fa95
 
-Accepted Baseline Tag:
+Previous Final Freeze Attempt:
   p0-v1.0.0
+  → 8417a189d5fcc9d9b89e41d2344574f5205fd2fe
+  Status: SUPERSEDED FINAL-FREEZE ATTEMPT
+  Reason: non-semantic Context Entry state inconsistency in AI_BOOTSTRAP.md
 
-Accepted Baseline SHA:
-  = commit referenced by refs/tags/p0-v1.0.0
+Authoritative Accepted Baseline:
+  p0-v1.0.1
+  → = commit referenced by refs/tags/p0-v1.0.1
+
+Supersession reason:
+  p0-v1.0.0 was superseded only because the AI_BOOTSTRAP accepted-state text remained stale.
+  No Product / Governance / Architecture / Derivation / Evaluation semantic change.
+  The semantic core of the p0-v1.0.0 freeze was and remains valid.
 
 Next:
   P1 Requirement / Architecture Design

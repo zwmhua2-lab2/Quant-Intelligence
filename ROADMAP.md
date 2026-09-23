@@ -266,9 +266,10 @@ P0 只有同时满足以下条件才可 ACCEPTED：
 12. v0.3 Independent Re-Review — PERFORMED as `P0-06` on the repository candidate
     (`f7ea873b…`, verdict `PASS`); outside-repo archive byte-level SHA-256
     recomputation still NOT PERFORMED。
-13. P0 Accepted Baseline — AVAILABLE（`refs/tags/p0-v1.0.0`）。
+13. P0 Accepted Baseline — AVAILABLE（`refs/tags/p0-v1.0.1`）。
 
 > Item 1 (repository establishment) was resolved by the `P0-05` pre-step recorded in
 > `PROJECT_STATE.md`. Item 12 is now `P0-06` and has PASSed on the repository candidate.
-> Item 13 was resolved by `P0-07-I02` (accepted baseline tag `p0-v1.0.0`).
+> Item 13 was resolved by `P0-07-I02` and finalized by `P0-07-I02-FIX-01`
+> (authoritative accepted baseline tag `p0-v1.0.1`).
 > All other items remain open.

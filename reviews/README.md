@@ -222,7 +222,8 @@ changes semantically after the review, the verdict lapses and a new review is re
 | `QI-P0-05-I01` | `39f4b2dba440470717b04fd15e8a114fb2ee939f` | Initial document-only P0 candidate | none |
 | `QI-P0-05-FIX-01` | see `../P0_BASELINE_MANIFEST.md` §1a — head of `p0/bootstrap-candidate` | Restored P1–P4 roadmap phase definitions from `../docs/p0/Quant_Intelligence_P0_Review_Candidate_v0.2.md` §9; advanced `P0-05` status | `f7ea873b9b61527af481646fb88f63f6a52f9a52` = `QI-P0-06-R01` `PASS` |
 | `QI-P0-07-I01` | `fabe3616bec75b2212b51d15ea37485377de5145` | Closeout candidate: persisted the `QI-P0-06-R01` review artifact, applied the `QI-P0-06-R01-P2-01` documentation-accuracy correction, updated review registry / status metadata / baseline pointers | Independent Closeout Verification `PASS`; AI Acceptance `ACCEPTED` |
-| `QI-P0-07-I02` | = commit referenced by `p0-v1.0.0` | Final freeze: status metadata advanced to `ACCEPTED`, acceptance provenance and baseline pointers recorded, Global Project Registry registered | none — terminal accepted baseline |
+| `QI-P0-07-I02` | `8417a189d5fcc9d9b89e41d2344574f5205fd2fe` | Final freeze: status metadata advanced to `ACCEPTED`, acceptance provenance and baseline pointers recorded, Global Project Registry registered | `FIX REQUIRED` — independent final verification found a Context Entry state inconsistency and a local scope-compliance issue; corrected by `QI-P0-07-I02-FIX-01` |
+| `QI-P0-07-I02-FIX-01` | = commit referenced by `p0-v1.0.1` | Non-semantic correction: `AI_BOOTSTRAP.md` accepted-state consistency, authoritative baseline pointer moved to `p0-v1.0.1`, local scope cleanup | none — authoritative accepted baseline |
 
 `QI-P0-05-FIX-01` (problem family `QI-P0-05-ROADMAP-RESTORATION`) is a **documentation fix**.
 It restores previously defined roadmap content that `QI-P0-RC-0.3` omitted. It is not a new
@@ -288,3 +289,48 @@ The historical `QI-P0-R01 = FIX REQUIRED` record in §1, §2 and §3 above is **
 Full freeze provenance and changed-path classification:
 `../docs/p0/QI-P0-07-I02_Final_Freeze_Record.md` and
 `../docs/p0/QI-P0-07-I02_Final_Freeze_Diff_Classification.md`.
+
+---
+
+# 8. Final Freeze Correction Provenance — QI-P0-07-I02-FIX-01
+
+> Added by `QI-P0-07-I02-FIX-01`. The historical review results in §1–§7 above are preserved
+> and are **not** rewritten or erased.
+
+```text
+QI-P0-07-I02
+Initial Final Freeze Attempt
+p0-v1.0.0
+→ 8417a189d5fcc9d9b89e41d2344574f5205fd2fe
+
+Result after independent final verification:
+FIX REQUIRED
+
+Reason:
+Context Entry state inconsistency + local scope-compliance cleanup
+
+QI-P0-07-I02-FIX-01
+Non-semantic correction
+```
+
+```text
+Final authoritative baseline:
+p0-v1.0.1
+→ = commit referenced by refs/tags/p0-v1.0.1
+```
+
+```text
+The p0-v1.0.0 freeze was superseded only because the AI_BOOTSTRAP accepted-state text
+remained stale. Its semantic core was and remains valid: no Product / Governance /
+Architecture / Derivation / Evaluation semantic change was involved.
+
+P0 Acceptance Authority:                DELEGATED_AI
+Global Registry:                        HUMAN-CONFIRMED (unchanged)
+Business Implementation Authorization:  NONE
+P1 implementation:                      NOT AUTHORIZED
+```
+
+Full correction record:
+`../docs/p0/QI-P0-07-I02-FIX-01_Final_Baseline_Correction_Record.md`.
+Changed-path classification:
+`../docs/p0/QI-P0-07-I02-FIX-01_Diff_Classification.md`.
