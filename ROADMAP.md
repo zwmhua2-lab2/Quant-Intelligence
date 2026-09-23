@@ -26,7 +26,7 @@ P4   V1 System Audit
 ```text
 P0     = ACCEPTED
 P0-07  = DONE / ACCEPTED
-P1     = DESIGN NEXT / NOT STARTED
+P1     = DESIGN (design candidate persisted / review pending)
 P1–P4  = NOT IMPLEMENTATION AUTHORIZED
 ```
 
@@ -273,3 +273,39 @@ P0 只有同时满足以下条件才可 ACCEPTED：
 > Item 13 was resolved by `P0-07-I02` and finalized by `P0-07-I02-FIX-01`
 > (authoritative accepted baseline tag `p0-v1.0.1`).
 > All other items remain open.
+
+---
+
+# Part G — P1 Design Status
+
+> Added by `QI-P1-03-I01` (document-only P1 design candidate persistence).
+> **Scope of this part: P1 design status only.** Part A phase axis, Part B phase
+> definitions (P1–P4 scope), Part C P0 roadmap, Part D P1 first-slice guardrails,
+> Part E P0 freeze gate and Part F are **unchanged** by this addition.
+
+```text
+P1-01  Requirement Design                             = DESIGN COMPLETE
+P1-02  Architecture + Data Contract + Reuse Design    = DESIGN COMPLETE
+P1-03  Document-only P1 Design Candidate Persistence  = DESIGN CANDIDATE PERSISTED /
+                                                         REVIEW PENDING
+P1-04  Independent Requirement / Architecture Review  = NOT STARTED  (next)
+P1-05  Freeze + P1-I01 Formal Implementation Task     = NOT STARTED
+```
+
+```text
+P1 Status           = DESIGN
+P1 Requirement      = NOT FROZEN
+P1 Architecture     = NOT FROZEN
+P1 Implementation   = NOT AUTHORIZED
+Business Coding     = FORBIDDEN
+
+P1 Design Input     = docs/p1/QI-P1_Design_Input_v0.1.md
+P1 Candidate Branch = p1/design-candidate
+P1 Design Candidate = P1 DESIGN REVIEW CANDIDATE / NOT FROZEN
+```
+
+**Next = P1-04 Independent Requirement / Architecture Review.**
+
+P1 design candidate persistence is **not** a P1 freeze and does **not** authorize P1
+implementation. Part B P1–P4 scope is not extended, reduced or redefined by this part,
+and Part D P1 first-slice guardrails remain authoritative and unweakened.

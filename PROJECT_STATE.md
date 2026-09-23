@@ -79,7 +79,8 @@ Supersession reason:
   The semantic core of the p0-v1.0.0 freeze was and remains valid.
 
 Next:
-  P1 Requirement / Architecture Design
+  P1-04 Independent Requirement / Architecture Review
+  (authoritative P1 state: see §7)
   NOT P1 Coding.
 ```
 
@@ -199,17 +200,18 @@ P0 = ACCEPTED
 Business Implementation Authorization = NONE
 DeepSeek Business Coding = FORBIDDEN
 
-P1 = DESIGN NEXT / NOT STARTED
+P1 = DESIGN
 P1 Implementation Authorization = NONE
 PROJECT REPOSITORY = ESTABLISHED (zwmhua2-lab2/Quant-Intelligence)
 ```
 
 下一步：
 
-**P1 Requirement / Architecture Design**
+**P1-04 Independent Requirement / Architecture Review**
 
-P0 已 `ACCEPTED`。`P1` 仍为 `DESIGN NEXT / NOT STARTED`，`P1–P4` 均**未**获得实现授权。
-下一步**不是** P1 Coding。
+P0 已 `ACCEPTED`。P1 设计候选已落库到 `p1/design-candidate`（`QI-P1-03-I01`），
+但 `P1` 仍为 `DESIGN / NOT FROZEN`，`P1–P4` 均**未**获得实现授权。
+下一步**不是** P1 Coding，也**不是** P1-I01。
 
 ---
 
@@ -232,3 +234,72 @@ Authoritative precedence:
 ```text
 Repository Truth > Chat History > Memory > Worker Report
 ```
+
+---
+
+# 7. P1 Design Candidate State (authoritative for P1)
+
+> Added by `QI-P1-03-I01` (document-only P1 design candidate persistence).
+> This section is the **authoritative P1 current-state pointer**. It does not change
+> any P0 state above.
+
+```text
+P0 = ACCEPTED
+
+P1-01 = DESIGN COMPLETE
+P1-02 = DESIGN COMPLETE
+P1-03 = DESIGN CANDIDATE PERSISTED / REVIEW PENDING
+
+P1 Requirement / Architecture = NOT FROZEN
+P1 Implementation Authorization = NONE
+Business Coding = FORBIDDEN
+
+Next =
+P1-04 Independent Requirement / Architecture Review
+```
+
+```text
+P1 Candidate Branch:  p1/design-candidate
+P1 Design Input:      docs/p1/QI-P1_Design_Input_v0.1.md
+P1 Design Candidate:  P1 DESIGN REVIEW CANDIDATE / NOT FROZEN
+```
+
+Canonical P1 documents (design review candidate, not frozen):
+
+```text
+P1_REQUIREMENTS.md
+P1_ARCHITECTURE.md
+P1_DATA_CONTRACT.md
+P1_REUSE_MANIFEST.md
+P1_IMPLEMENTATION_PLAN.md   (PLANNED ONLY — NOT IMPLEMENTATION AUTHORIZATION)
+P1_DESIGN_MANIFEST.md
+docs/p1/README.md
+dev_log/QI-P1-03-I01.md
+```
+
+## 7a. P1 reading order
+
+```text
+1. docs/p1/README.md
+2. docs/p1/QI-P1_Design_Input_v0.1.md   (authoritative source artifact)
+3. P1_REQUIREMENTS.md
+4. P1_ARCHITECTURE.md
+5. P1_DATA_CONTRACT.md
+6. P1_REUSE_MANIFEST.md
+7. P1_IMPLEMENTATION_PLAN.md
+8. P1_DESIGN_MANIFEST.md
+```
+
+## 7b. Boundaries that must not be misread
+
+```text
+P1-03 (design candidate persisted)  ≠  P1 design frozen
+P1 design candidate persisted       ≠  P1 implementation authorized
+P1-04 review PASS is required       ≠  a start of P1-I01
+```
+
+- A persisted design candidate is **not** a frozen design. `P1-04` must return a verdict
+  before P1-05 Freeze can be considered.
+- `P1 Implementation Authorization` remains `NONE` and `Business Coding` remains
+  `FORBIDDEN` throughout P1-04.
+- `P1-I01` … `P1-I04` are **planned only**; none is started or authorized.

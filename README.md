@@ -71,3 +71,41 @@ Authoritative precedence:
 ```text
 Repository Truth > Chat History > Memory > Worker Report
 ```
+
+---
+
+## P1 design candidate — review pending, not frozen, not authorized
+
+The P0 accepted baseline is frozen and unchanged. The P1 design candidate lives on its
+own branch and does **not** advance the accepted baseline.
+
+```text
+P1 Candidate Branch:  p1/design-candidate
+P1 Design Input:      docs/p1/QI-P1_Design_Input_v0.1.md
+P1 Status:            DESIGN  (design candidate persisted / review pending)
+P1 Requirement:       NOT FROZEN
+P1 Architecture:      NOT FROZEN
+P1 Implementation:    NOT AUTHORIZED
+Business Coding:      FORBIDDEN
+Next:                 P1-04 Independent Requirement / Architecture Review
+```
+
+The `Status` block at the top of this file describes the P0 accepted baseline and
+predates the P1 design candidate. The P1 status above is the current one; the
+authoritative current-state pointers are `PROJECT_STATE.md` §7 and `ROADMAP.md` Part G.
+
+Read the P1 design candidate in this order:
+
+```text
+1. docs/p1/README.md
+2. docs/p1/QI-P1_Design_Input_v0.1.md
+3. P1_REQUIREMENTS.md
+4. P1_ARCHITECTURE.md
+5. P1_DATA_CONTRACT.md
+6. P1_REUSE_MANIFEST.md
+7. P1_IMPLEMENTATION_PLAN.md
+8. P1_DESIGN_MANIFEST.md
+```
+
+A persisted design candidate is **not** a frozen design and does **not** authorize
+implementation.
