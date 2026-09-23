@@ -55,6 +55,14 @@ Candidate Branch Base:
 Candidate Git SHA:
   = branch tip at handoff   (see §1a)
 
+Candidate Revision:
+  REV-02   includes QI-P1-03-I01-FIX-01 — Design Input fidelity correction
+           (removal of unauthorized inter-batch dependency semantics)
+  REV-01   7781e9a6e89f2996b46cb5239540abf491741744
+           initial persistence commit (QI-P1-03-I01);
+           retained as a past, immutable commit and superseded as review target
+           by REV-02
+
 Next Review:
   P1-04 Independent Requirement / Architecture Review
 ```
@@ -133,7 +141,7 @@ git hash-object <path>
 | 2 | `P1_ARCHITECTURE.md` | `5e38bc952db22520e11a495e591e9f0149ec4008` | single-process architecture, technology baseline, repository / module layout, SQLite architecture, runtime worker topology, startup warmup, health / readiness, API boundary, UI update model, local security boundary, restart behaviour |
 | 3 | `P1_DATA_CONTRACT.md` | `eedb1c89e10debd46834bd3f0fe68b63a5ebb1a8` | causal timestamps, Market Event identity, canonical / hash rules, detector formulas and defaults, event state machine, Opportunity Episode, Evidence revision, Quality Tier, Direction Coherence, Processing Priority, Evaluation Eligibility, Decision contract, Report version, Delivery attempt, BBO observations, Outcome scopes / results, coverage / missing semantics, persistence entities, retention |
 | 4 | `P1_REUSE_MANIFEST.md` | `7e1bdfd8ef3d022cc1eb3d4f1bf2c5d6fe96dba3` | MarketPulse reuse decisions ADAPT-SUBSET / ADAPT-CONCEPT / REIMPLEMENT FROM CONTRACT / EXCLUDE, pinned source SHA, carry-over source limitations |
-| 5 | `P1_IMPLEMENTATION_PLAN.md` | `49b0f589cf95cd05c3253e2f26fc52a2741fa026` | P1-I01 … P1-I04 batch planning only (`PLANNED ONLY`, not implementation authorization) |
+| 5 | `P1_IMPLEMENTATION_PLAN.md` | `9a779705afc4bd7c964b13dd17d83ebb69987b55` | P1-I01 … P1-I04 batch planning only (`PLANNED ONLY`, not implementation authorization) |
 | 6 | `P1_DESIGN_MANIFEST.md` | *(self — see §1a)* | this design candidate's identity, status, blob identities, source digest, candidate branch, next review |
 
 ## 3b. Source artifact and P1 index
@@ -156,6 +164,7 @@ git hash-object <path>
 | # | Path | Git blob SHA |
 |---|---|---|
 | 12 | `dev_log/QI-P1-03-I01.md` | `569cfa011c1f822d58d24d17a899a5dd00a43592` |
+| 13 | `dev_log/QI-P1-03-I01-FIX-01.md` | `3fc8e0390fc4509efcc8115c17f2e5187bfb0d5d` |
 
 ---
 
@@ -227,10 +236,17 @@ configuration file of any implementation language.
 
 ```text
 Created by:   QI-P1-03-I01 Document-only P1 Design Candidate Persistence
+Revised by:   QI-P1-03-I01-FIX-01 P1 Design Input fidelity correction
+              (problem family QI-P1-03-PERSISTENCE-FIDELITY; non-semantic correction —
+               removed unauthorized inter-batch dependency statements from
+               P1_IMPLEMENTATION_PLAN.md and asserted
+               NOT DEFINED IN AUTHORITATIVE DESIGN INPUT instead;
+               no future dependency model was decided)
 Date:         2026-09-23
 Scope:        persist / split / organize / cross-reference / verify / commit / push only
 Business code created: NO
 Design semantics changed: NO
+New inter-batch dependency semantic introduced: NO
 ```
 
 ---

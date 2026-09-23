@@ -48,10 +48,17 @@ P1-I04  Forward Outcome + Restart + End-to-End
 **P1-P-01.** The four batches above are the complete P1 batch set. No additional batch
 may be introduced in this document.
 
-**P1-P-02 — dependency field convention (normative for this document).** The Design Input
-states the batch **sequence** (§24 order) but does not separately declare a formal
-inter-batch dependency contract. The `Dependency` field below therefore records only
-(a) the Design Input's ordering, and (b) the enclosing P1 design-freeze prerequisite.
+**P1-P-02 — dependency field convention (normative for this document).** The
+authoritative Design Input declares the batch **sequence** (§24 order), the batch scope
+and the batch acceptance boundaries. It does **not** declare a formal inter-batch
+dependency contract. Each `Dependency` field below therefore records only:
+
+```text
+(a) Sequence position
+(b) Formal inter-batch dependency status
+(c) Execution prerequisite
+```
+
 **No additional dependency semantic is asserted.** This is recorded explicitly so that
 P1-04 can review whether an explicit dependency contract is required.
 
@@ -81,9 +88,15 @@ Acceptance Boundary:
            + fail-closed health
            with NO Detector / Report / UI
 Dependency:
-           first batch in the Design Input §24 sequence;
-           no predecessor batch;
-           gated by the P1 design freeze
+           Sequence position:
+             first batch in Design Input §24
+
+           Formal inter-batch dependency:
+             NOT DEFINED IN AUTHORITATIVE DESIGN INPUT
+
+           Execution prerequisite:
+             P1 design must be frozen
+             and a separate Formal Implementation Task must authorize execution
 Status:    PLANNED ONLY — not authorized
 ```
 
@@ -114,9 +127,15 @@ Acceptance Boundary:
            + complete core chain
            with NO AI, NO delivery, NO UI
 Dependency:
-           follows P1-I01 in the Design Input §24 sequence;
-           requires P1-I01 outcomes (market data + persistence + runtime) to exist;
-           gated by the P1 design freeze
+           Sequence position:
+             after P1-I01 in Design Input §24
+
+           Formal inter-batch dependency:
+             NOT DEFINED IN AUTHORITATIVE DESIGN INPUT
+
+           Execution prerequisite:
+             P1 design must be frozen
+             and a separate Formal Implementation Task must authorize execution
 Status:    PLANNED ONLY — not authorized
 ```
 
@@ -140,9 +159,15 @@ Acceptance Boundary:
            real report reaches Telegram
            + UI reads DB truth and shows lineage
 Dependency:
-           follows P1-I02 in the Design Input §24 sequence;
-           requires P1-I02 outcomes (Decision + deterministic Report) to exist;
-           gated by the P1 design freeze
+           Sequence position:
+             after P1-I02 in Design Input §24
+
+           Formal inter-batch dependency:
+             NOT DEFINED IN AUTHORITATIVE DESIGN INPUT
+
+           Execution prerequisite:
+             P1 design must be frozen
+             and a separate Formal Implementation Task must authorize execution
 Status:    PLANNED ONLY — not authorized
 ```
 
@@ -167,9 +192,15 @@ Out of Scope:
 Acceptance Boundary:
            complete P1 observable intelligence loop
 Dependency:
-           follows P1-I03 in the Design Input §24 sequence;
-           requires P1-I03 outcomes to exist;
-           gated by the P1 design freeze
+           Sequence position:
+             after P1-I03 in Design Input §24
+
+           Formal inter-batch dependency:
+             NOT DEFINED IN AUTHORITATIVE DESIGN INPUT
+
+           Execution prerequisite:
+             P1 design must be frozen
+             and a separate Formal Implementation Task must authorize execution
 Status:    PLANNED ONLY — not authorized
 ```
 
